@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "A Five Sentence Term Paper Using Chi2 Analysis",
+    "section": "",
+    "text": "Introduction\nRQ: Does the color of the book predict the books’s genere?\nJudging a book by its cover is typically an ill-advised practice, but today, we are taking a quest down the road less traveled (or more traveled, if you suck) and asking the quesiton: does the color of a book predict that books genre?\n\n\nLiterature Review\nOthers have previously studied how machine learning algorithims may predict information about a book including a book’s genre (Vayadande et al. 2024).\n\n\nMethod\n\nimport pandas as pd \nimport numpy as np \nimport seaborn as sns \nfrom scipy.stats import chi2_contingency\n\ndomain = \"https://raw.githubusercontent.com/\"\npath = \"adamrossnelson/confident/refs/heads/main/data/\"\nfile = \"confident_fictional_books.csv\"\n\nbooks = pd.read_csv(domain + path + file)\n\nOur null hypothesis is that book cover color does not predict the book’s genre while the alternate hypothesis is that book cover color does predict the book’s genre and we study this question with data from 359 books where we know the book’s genre and the book’s cover color such that we can conduct a chi2 test to see if these two varaibles are either independent or dependent (as it turns out our chi2 test will involve a 6 x 6 test).\n\n\nResults\n\n# Conduct the chi2 with chi2_contingency by passing the observed\nx2, pval, degf, _ = chi2_contingency(\n    pd.crosstab(books['book_genre'],\n    books['book_color']))\n\nResults:\nChi2 Stat: 1.9920958032810256\nPvalue: 0.9999999997782358\nDegrees of Freedom: 25\nWith a Chi2 statistic result of 1.99210 and a p-value nearly equal to 1.00 (degrees of freedom 25) we fail to reject our null hypothesis and conclude that given these data, and given this analytical approach, there is no evidence to believe that a book’s cover may predict that book’s genre.\n\n\nDiscussion\nIt is a sad day for UW-Madison book club members, the DSHB students thought they could deliver a BIG WIN for the book club members and book afficionados worldwide; the search for a reproducible method that will predict book genre carries on!\n\n\nReferences\n\n\nVayadande, Kuldeep, Preeti Bailke, Ashutosh M Kulkarni, R Kumar, and Ajit B Patil. 2024. “Book Genre Prediction Using NLP: A Review.” How Machine Learning Is Innovating Today’s World: A Concise Technical Guide, 37–46."
+  }
+]

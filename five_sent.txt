@@ -1,0 +1,16 @@
+---
+title: "A Five Sentence Term Paper Using Chi2 Analysis"
+date: today
+execute:
+    echo: true 
+author:
+    - name: Hannah Huber B.A.
+    affiliiation:
+        - name: University of Wisconsin Madison 
+abstract: >
+    In our research we study, with a poetic balance of levity and clarilty, the pr$
+keywords:
+    - chi2
+    - reproducible 
+    - Quarto
+    - Python
